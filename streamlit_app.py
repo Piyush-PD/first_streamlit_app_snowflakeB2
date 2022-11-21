@@ -23,6 +23,8 @@ filter_data = data.loc[filter_fruit]
 # Display the table on the page.
 streamlit.dataframe(filter_data)
 
+
+streamlit.header("Fruityvice Fruit Advice!")
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 streamlit.text(fruityvice_response)
 
