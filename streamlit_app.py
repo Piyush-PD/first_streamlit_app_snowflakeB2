@@ -18,7 +18,7 @@ streamlit.text("🥑🍞 Avacado Toast")
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
 data = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+# my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 data = data.set_index('Fruit')
 # Let's put a pick list here so they can pick the fruit they want to include 
 filter_fruit = streamlit.multiselect("Pick some fruits:", list(data.index), ["Avocado","Strawberries"])
@@ -30,7 +30,7 @@ streamlit.dataframe(filter_data)
 streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+# my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
 # streamlit.text(fruityvice_response.json())
 # write your own comment -what does the next line do? 
